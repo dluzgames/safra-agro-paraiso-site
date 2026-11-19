@@ -1,1173 +1,978 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Safra Agro | Nutrição Animal de Alta Performance • Paraíso do Tocantins</title>
-  <meta name="description" content="Casquinha de soja peletizada, sorgo em grão selecionado, farelo de soja 46% e rações para confinamento. Fornecimento a granel e sacaria para pecuaristas em Paraíso do Tocantins e Vale do Araguaia.">
-  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
-
-  <!-- Typography: Fraunces (Editorial Display Serif) + Inter (Crisp Body) + JetBrains Mono (Data/Specs) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safra Agro &amp; Safra Air — Nutrição Animal e Pulverização com Drones · Paraíso - TO</title>
+  <meta name="description" content="Nutrição animal direto da fazenda (casquinha de soja, sorgo, farelo 46%, milho, DDG, ureia) e pulverização aérea Safra Air com drones DJI Agras T100, T40 e T25 em TO, MA e PA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg-primary: #07100A;
-      --bg-secondary: #0C1A12;
-      --bg-surface: #112419;
-      --bg-surface-elevated: #162E21;
-      
-      --border-light: rgba(255, 255, 255, 0.08);
-      --border-medium: rgba(255, 255, 255, 0.14);
-      --border-accent: rgba(46, 125, 50, 0.4);
-      
-      --text-primary: #FFFFFF;
-      --text-secondary: #A3B899;
-      --text-muted: #6B8071;
-      
-      --accent-gold: #E5A93C;
-      --accent-gold-hover: #F2B94F;
-      --accent-green: #2E9B56;
-      --accent-green-dark: #1E6B3B;
-
-      --font-serif: 'Fraunces', Georgia, serif;
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
+      --paper: #f5f6f2;
+      --plate: #ffffff;
+      --cotton: #edf0ea;
+      --ink: #111913;
+      --ink-secondary: #435045;
+      --ink-muted: #647366;
+      --rule: #d5ddd2;
+      --safra-green: #0d6832;
+      --safra-green-hover: #094d25;
+      --harvest-gold: #b77900;
+      --whatsapp: #047857;
+      --whatsapp-hover: #065f46;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'Work Sans', sans-serif;
+      --radius: 2px;
+      --max: 1220px;
     }
 
-    /* Browser Surfaces Theming */
-    ::selection {
-      background: #1E6B3B;
-      color: #FFFFFF;
-    }
-    ::-webkit-scrollbar {
-      width: 7px;
-    }
-    ::-webkit-scrollbar-track {
-      background: var(--bg-primary);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #1B3826;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--accent-gold);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
-      font-family: var(--font-sans);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
       font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      width: min(1200px, 92vw);
-      margin: 0 auto;
-    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .tabular { font-variant-numeric: tabular-nums; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
-    h1, h2, h3, h4 {
-      font-family: var(--font-serif);
-      font-weight: 700;
-      color: var(--text-primary);
-      text-wrap: balance;
-      letter-spacing: -0.02em;
-    }
-
-    p {
-      text-wrap: pretty;
-    }
-
-    /* Header & Navigation */
-    .utility-bar {
-      border-bottom: 1px solid var(--border-light);
-      background: rgba(5, 11, 7, 0.95);
-      font-size: 13px;
-      padding: 10px 0;
-    }
-    .utility-bar-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .utility-address {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text-secondary);
-    }
-    .utility-contact {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-    .utility-contact a {
-      color: var(--text-primary);
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: color 0.2s;
-    }
-    .utility-contact a:hover {
-      color: var(--accent-gold);
-    }
-
-    .main-nav {
+    /* Header */
+    .topbar {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(7, 16, 10, 0.92);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border-light);
-      padding: 16px 0;
+      z-index: 40;
+      background: var(--plate);
+      border-bottom: 1px solid var(--rule);
     }
-    .main-nav-inner {
+
+    .topbar-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 76px;
     }
-    .brand-identity {
+
+    .brand {
       display: flex;
       align-items: center;
       gap: 14px;
-      text-decoration: none;
-    }
-    .brand-logo {
-      width: 44px;
-      height: 44px;
-      border-radius: 8px;
-      background: #FFFFFF;
-      padding: 2px;
-      object-fit: contain;
-      border: 1px solid var(--border-medium);
-    }
-    .brand-title {
-      font-family: var(--font-serif);
-      font-size: 22px;
-      font-weight: 800;
-      color: #FFFFFF;
-      line-height: 1.1;
-      letter-spacing: -0.01em;
-    }
-    .brand-subtitle {
-      display: block;
-      font-size: 11px;
-      font-family: var(--font-mono);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent-gold);
-    }
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-    .nav-menu a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-    .nav-menu a:hover {
-      color: #FFFFFF;
     }
 
-    /* Buttons */
-    .btn {
+    .brand img {
+      height: 54px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-meta {
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid var(--rule);
+      padding-left: 14px;
+      font-size: 12.5px;
+      line-height: 1.3;
+      color: var(--ink-muted);
+    }
+
+    .brand-meta strong {
+      color: var(--ink);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-secondary);
+    }
+
+    .nav-links a:hover { color: var(--safra-green); }
+
+    .btn-header {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 14px 26px;
-      border-radius: 8px;
-      font-size: 14px;
+      padding: 10px 16px;
+      border: 1px solid var(--ink);
+      border-radius: var(--radius);
+      font-size: 13.5px;
       font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      cursor: pointer;
-      border: 1px solid transparent;
-    }
-    .btn-gold {
-      background: var(--accent-gold);
-      color: #07100A;
-      font-weight: 700;
-    }
-    .btn-gold:hover {
-      background: var(--accent-gold-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(229, 169, 60, 0.25);
-    }
-    .btn-green {
-      background: var(--accent-green);
-      color: #FFFFFF;
-    }
-    .btn-green:hover {
-      background: #35AD61;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(46, 155, 86, 0.3);
-    }
-    .btn-outline {
-      background: rgba(255, 255, 255, 0.04);
-      color: #FFFFFF;
-      border-color: var(--border-medium);
-    }
-    .btn-outline:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.3);
-      transform: translateY(-2px);
+      background: var(--plate);
+      transition: background 0.15s ease, color 0.15s ease;
     }
 
-    /* Hero Section */
-    .hero {
-      padding: 90px 0 70px;
-      position: relative;
+    .btn-header:hover {
+      background: var(--ink);
+      color: var(--plate);
     }
+
+    /* Hero */
+    .hero {
+      border-bottom: 1px solid var(--rule);
+      padding: 46px 0 42px;
+    }
+
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 56px;
+      grid-template-columns: minmax(0, 1.04fr) minmax(0, 1.12fr);
+      gap: 44px;
       align-items: center;
     }
-    .hero-headline {
-      font-size: clamp(38px, 4.8vw, 62px);
-      line-height: 1.08;
+
+    .hero h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 5.2vw, 4.35rem);
       font-weight: 800;
-      color: #FFFFFF;
-      margin-bottom: 24px;
-      letter-spacing: -0.03em;
-    }
-    .hero-lead {
-      font-size: clamp(17px, 1.4vw, 20px);
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: 36px;
-      max-width: 620px;
-    }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 40px;
-    }
-    .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      padding-top: 28px;
-      border-top: 1px solid var(--border-light);
-    }
-    .metric-value {
-      font-family: var(--font-serif);
-      font-size: 26px;
-      font-weight: 800;
-      color: var(--accent-gold);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .metric-label {
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.4;
+      line-height: 0.94;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--ink);
     }
 
-    .hero-image-frame {
-      position: relative;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid var(--border-medium);
-      background: var(--bg-secondary);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
-    }
-    .hero-image-frame img {
-      width: 100%;
-      height: 480px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s ease;
-    }
-    .hero-image-frame:hover img {
-      transform: scale(1.02);
-    }
-    .hero-image-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 24px;
-      background: linear-gradient(to top, rgba(7, 16, 10, 0.95) 0%, rgba(7, 16, 10, 0.6) 70%, transparent 100%);
-    }
-    .hero-image-caption strong {
-      display: block;
-      font-family: var(--font-serif);
-      font-size: 18px;
-      color: #FFFFFF;
-    }
-    .hero-image-caption span {
-      font-size: 13px;
-      color: var(--text-secondary);
+    .hero h1 span { color: var(--safra-green); }
+
+    .hero-copy {
+      margin: 20px 0 0;
+      max-width: 50ch;
+      font-size: 17px;
+      color: var(--ink-secondary);
     }
 
-    /* Commodity & Spec Sheet Section */
-    .section-spacing {
-      padding: 90px 0;
-    }
-    .section-header {
-      margin-bottom: 52px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-    .section-title {
-      font-size: clamp(30px, 3.2vw, 44px);
-      line-height: 1.15;
-    }
-    .section-desc {
-      color: var(--text-secondary);
-      max-width: 540px;
-      font-size: 16px;
-    }
-
-    /* Product Cards & Editorial Architecture */
-    .products-mosaic {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 32px;
-    }
-    .product-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-light);
-      border-radius: 14px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: border-color 0.25s, transform 0.25s;
-    }
-    .product-card:hover {
-      border-color: var(--border-medium);
-      transform: translateY(-4px);
-    }
-    .card-large {
-      grid-column: span 7;
-    }
-    .card-side {
-      grid-column: span 5;
-    }
-    .card-half {
-      grid-column: span 6;
-    }
-
-    .product-img-wrapper {
-      position: relative;
-      height: 280px;
-      overflow: hidden;
-      background: #040906;
-    }
-    .product-img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-    .product-card:hover .product-img-wrapper img {
-      transform: scale(1.03);
-    }
-    .product-tag {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      background: rgba(7, 16, 10, 0.88);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--border-medium);
-      color: var(--accent-gold);
-      font-family: var(--font-mono);
-      font-size: 11px;
+    .hero-meta-line {
+      margin: 18px 0 0;
+      font-size: 14px;
       font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 6px;
-      letter-spacing: 0.05em;
+      color: var(--ink);
+      border-top: 1px solid var(--rule);
+      padding-top: 14px;
     }
 
-    .product-body {
-      padding: 32px;
+    .hero-actions {
+      margin-top: 24px;
       display: flex;
-      flex-direction: column;
-      flex: 1;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
     }
-    .product-name {
-      font-size: 24px;
-      margin-bottom: 12px;
-    }
-    .product-description {
-      color: var(--text-secondary);
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      background: var(--whatsapp);
+      color: #ffffff;
+      padding: 13px 22px;
+      border-radius: var(--radius);
       font-size: 15px;
-      margin-bottom: 24px;
-      line-height: 1.6;
+      font-weight: 600;
+      border: 1px solid var(--whatsapp);
+      transition: background 0.15s ease;
     }
 
-    /* Nutritional Spec Table */
-    .spec-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 28px;
-      font-size: 13px;
-    }
-    .spec-table th {
-      text-align: left;
-      font-family: var(--font-mono);
-      color: var(--text-muted);
-      font-weight: 500;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--border-light);
-    }
-    .spec-table td {
-      padding: 10px 0;
-      color: #E2E8F0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    }
-    .spec-table td strong {
-      color: var(--accent-gold);
-      font-family: var(--font-mono);
+    .btn-whatsapp:hover { background: var(--whatsapp-hover); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 2px;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--ink);
+      border-bottom: 2px solid var(--safra-green);
     }
 
-    /* Interactive Quotation Calculator */
-    .calculator-container {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-medium);
-      border-radius: 16px;
-      padding: 48px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    }
-    .calculator-grid {
+    .btn-secondary:hover { color: var(--safra-green); }
+
+    /* Dual Plate Lookbook in Hero */
+    .hero-plates {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .hero-plate {
+      background: var(--plate);
+      border: 1px solid var(--rule);
+      overflow: hidden;
+    }
+
+    .hero-plate img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 45%;
+    }
+
+    .hero-plate-cap {
+      padding: 10px 14px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .hero-plate-cap strong { color: var(--ink); }
+
+    /* Division Strip */
+    .specs-strip {
+      background: var(--plate);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .spec-item {
+      padding: 18px 20px;
+      border-right: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .spec-item:last-child { border-right: none; }
+    .spec-item strong { font-size: 14.5px; color: var(--ink); }
+    .spec-item span { font-size: 13px; font-weight: 600; color: var(--safra-green); }
+
+    /* Sections */
+    .section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.6vw, 2.95rem);
+      font-weight: 800;
+      line-height: 0.98;
+      text-transform: uppercase;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 44ch;
+      font-size: 15px;
+      color: var(--ink-secondary);
+    }
+
+    /* Interactive Supply Ledger */
+    .ledger-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .ledger-table {
+      border-top: 2px solid var(--ink);
+      background: var(--plate);
+    }
+
+    .ledger-row {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--rule);
+      padding: 18px 16px;
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1.2fr) minmax(0, 1fr) 92px;
+      gap: 12px;
+      align-items: center;
+      text-align: left;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: background 0.12s ease;
+    }
+
+    .ledger-row:hover { background: var(--cotton); }
+    .ledger-row.is-active {
+      background: #eef6f0;
+      box-shadow: inset 4px 0 0 var(--safra-green);
+    }
+
+    .ledger-code {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--harvest-gold);
+      letter-spacing: 0.04em;
+    }
+
+    .ledger-name {
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .ledger-spec {
+      font-size: 13.5px;
+      color: var(--ink-muted);
+    }
+
+    .ledger-cta {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--safra-green);
+      text-align: right;
+    }
+
+    .preview-panel {
+      background: var(--plate);
+      border: 1px solid var(--rule);
+    }
+
+    .preview-panel img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .preview-body {
+      padding: 20px 22px;
+    }
+
+    .preview-body h3 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .preview-body p {
+      margin: 8px 0 18px;
+      font-size: 14.5px;
+      color: var(--ink-secondary);
+    }
+
+    /* Safra Air Division Highlight */
+    .air-section {
+      background: var(--plate);
+      padding: 64px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .air-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .air-logo-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .air-logo-row img {
+      height: 88px;
+      width: auto;
+    }
+
+    .air-logo-row span {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--harvest-gold);
+    }
+
+    .air-layout h2 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2.1rem, 3.8vw, 3.1rem);
+      font-weight: 800;
+      line-height: 0.96;
+      text-transform: uppercase;
+    }
+
+    .air-lead {
+      margin: 14px 0 22px;
+      font-size: 16px;
+      color: var(--ink-secondary);
+    }
+
+    .fleet-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 2px solid var(--ink);
+      margin-bottom: 22px;
+    }
+
+    .fleet-table td {
+      padding: 13px 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 14px;
+      vertical-align: top;
+    }
+
+    .fleet-table td:first-child {
+      width: 148px;
+      font-weight: 800;
+      color: var(--safra-green);
+    }
+
+    .air-terms {
+      padding: 16px 18px;
+      background: var(--cotton);
+      border-left: 4px solid var(--harvest-gold);
+      font-size: 14px;
+      color: var(--ink);
+      margin-bottom: 22px;
+    }
+
+    .air-photo {
+      border: 1px solid var(--rule);
+      background: var(--paper);
+      overflow: hidden;
+    }
+
+    .air-photo img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    /* Visual Showcase Grid */
+    .plates-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--rule);
+      border-left: 1px solid var(--rule);
+      background: var(--plate);
+    }
+
+    .plate-card {
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .plate-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .plate-meta {
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .plate-meta h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .plate-meta p {
+      margin: 0;
+      font-size: 13.5px;
+      color: var(--ink-secondary);
+    }
+
+    .plate-cat {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--safra-green);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-top: 4px;
+    }
+
+    /* Direct Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
       gap: 36px;
       align-items: start;
     }
-    .form-group {
-      margin-bottom: 20px;
-    }
-    .form-group label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: #E2E8F0;
-      margin-bottom: 8px;
-    }
-    .form-control {
-      width: 100%;
-      background: var(--bg-primary);
-      border: 1px solid var(--border-medium);
-      border-radius: 8px;
-      padding: 14px 16px;
-      color: #FFFFFF;
-      font-size: 15px;
-      font-family: var(--font-sans);
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .form-control:focus {
-      border-color: var(--accent-gold);
-      box-shadow: 0 0 0 3px rgba(229, 169, 60, 0.15);
-    }
 
-    .calculator-summary-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-accent);
-      border-radius: 12px;
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-    }
-    .summary-heading {
-      font-family: var(--font-serif);
-      font-size: 20px;
-      margin-bottom: 16px;
-      color: #FFFFFF;
-    }
-    .summary-box {
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 24px;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-    .summary-line {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
-      padding-bottom: 6px;
-    }
-    .summary-line:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-    .summary-line span {
-      color: var(--text-secondary);
-    }
-    .summary-line strong {
-      color: #FFFFFF;
-      font-family: var(--font-mono);
-    }
-
-    /* Logistics & Depósito Grid */
-    .logistics-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-light);
-      border-radius: 16px;
-      padding: 44px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 48px;
-      align-items: center;
-    }
-    .logistics-list {
-      list-style: none;
-      margin: 28px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .logistics-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      font-size: 15px;
-      color: var(--text-secondary);
-    }
-    .logistics-icon {
-      color: var(--accent-gold);
-      font-size: 18px;
-      line-height: 1;
-      margin-top: 2px;
-    }
-    .logistics-item strong {
-      color: #FFFFFF;
-      display: block;
-      margin-bottom: 2px;
-      font-family: var(--font-serif);
-      font-size: 17px;
-    }
-
-    /* Digital Ecosystem DLuz */
-    .ecosystem-panel {
-      border-top: 1px solid var(--border-light);
-      border-bottom: 1px solid var(--border-light);
-      background: rgba(12, 26, 18, 0.4);
-      padding: 80px 0;
-    }
-    .ecosystem-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-    }
-    .ecosystem-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-light);
-      border-radius: 12px;
+    .quote-box {
       padding: 28px;
-      transition: all 0.2s ease;
+      background: var(--plate);
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--safra-green);
     }
-    .ecosystem-card:hover {
-      border-color: var(--accent-gold);
-      transform: translateY(-3px);
+
+    .quote-box blockquote {
+      margin: 0;
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 1.45;
+      color: var(--ink);
     }
-    .ecosystem-card h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
+
+    .quote-box cite {
+      display: block;
+      margin-top: 12px;
+      font-style: normal;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--harvest-gold);
     }
-    .ecosystem-card p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.6;
+
+    .contact-ledger {
+      background: var(--plate);
+      border: 1px solid var(--rule);
+      padding: 8px 24px 24px;
     }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 14.5px;
+    }
+
+    .contact-row span { color: var(--ink-muted); }
+    .contact-row strong, .contact-row a { text-align: right; color: var(--ink); font-weight: 600; }
+    .contact-row a:hover { color: var(--safra-green); }
 
     /* Footer */
-    footer {
-      background: #040905;
-      border-top: 1px solid var(--border-light);
-      padding: 60px 0 36px;
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-    .footer-grid {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 32px;
-      margin-bottom: 40px;
-    }
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
+    .site-foot {
+      padding: 24px 0 36px;
       font-size: 13px;
+      color: var(--ink-muted);
     }
 
-    /* Responsive */
-    @media (max-width: 992px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-      .card-large, .card-side, .card-half { grid-column: span 12; }
-      .calculator-grid { grid-template-columns: 1fr; }
-      .logistics-card { grid-template-columns: 1fr; }
-      .nav-menu { display: none; }
+    .foot-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .sticky-wa {
+      display: none;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid, .ledger-wrap, .air-layout, .contact-grid { grid-template-columns: 1fr; }
+      .specs-grid, .plates-grid { grid-template-columns: 1fr; }
+      .spec-item { border-right: none; border-bottom: 1px solid var(--rule); }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .wrap { padding: 0 18px; }
+      .brand-meta { display: none; }
+      .ledger-row { grid-template-columns: 56px 1fr; }
+      .ledger-spec, .ledger-cta { display: none; }
+      body { padding-bottom: 64px; }
+      .sticky-wa {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: var(--whatsapp);
+        color: #ffffff;
+        padding: 14px 16px;
+        font-size: 14.5px;
+        font-weight: 700;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Utility Bar -->
-  <aside class="utility-bar" aria-label="Informações de Atendimento">
-    <div class="container utility-bar-content">
-      <div class="utility-address">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-        <span>Av. Marginal, 236 • Pq. dos Buritis & Av. José de Alencar, 243 — Paraíso do Tocantins - TO</span>
-      </div>
-      <div class="utility-contact">
-        <span style="color: var(--text-muted);">Expedição & Balcão: 07h30 às 18h00</span>
-        <a href="https://wa.me/5563992198016?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Safra%20Agro%20e%20gostaria%20de%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          <span>(63) 99219-8016</span>
-        </a>
-      </div>
-    </div>
-  </aside>
-
-  <!-- Main Navigation -->
-  <nav class="main-nav">
-    <div class="container main-nav-inner">
-      <a href="#inicio" class="brand-identity">
-        <img src="assets/logo.jpg" alt="Safra Agro" class="brand-logo">
-        <div>
-          <span class="brand-title">Safra Agro</span>
-          <span class="brand-subtitle">Nutrição Animal & Agronegócio</span>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a href="#topo" class="brand">
+        <img src="assets/logo_safra_agro.png" alt="Safra Agro" />
+        <div class="brand-meta">
+          <strong>Paraíso do Tocantins · TO</strong>
+          <span>Nutrição Animal &amp; Safra Air Drones</span>
         </div>
       </a>
-
-      <div class="nav-menu">
-        <a href="#insumos">Insumos & Laudos</a>
-        <a href="#simulador">Simular Carga</a>
-        <a href="#estrutura">Estrutura & Logística</a>
-        <a href="#solucoes-digitais">Soluções DLuz</a>
-      </div>
-
-      <a href="https://wa.me/5563992198016?text=Ol%C3%A1%20equipe%20Safra%20Agro!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o%20de%20insumos." target="_blank" rel="noopener" class="btn btn-gold">
-        <span>Cotar no WhatsApp</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      <nav class="nav-links">
+        <a href="#linhas">Nutrição &amp; Insumos</a>
+        <a href="#safra-air">Safra Air Drones</a>
+        <a href="#estrutura">Depósito &amp; Campo</a>
+        <a href="#contato">Onde Estamos</a>
+      </nav>
+      <a href="https://wa.me/5563992198016?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Safra%20Agro%20e%20gostaria%20de%20cotar." target="_blank" rel="noopener" class="btn-header tabular">
+        WhatsApp (63) 99219-8016
       </a>
     </div>
-  </nav>
+  </header>
 
-  <!-- Hero Section -->
-  <section id="inicio" class="hero">
-    <div class="container hero-grid">
-      <div>
-        <h1 class="hero-headline">
-          Nutrição animal de alto rendimento para a pecuária do Vale do Araguaia.
-        </h1>
-        <p class="hero-lead">
-          Casquinha de soja peletizada, sorgo selecionado e farelo 46% com controle de umidade e pureza rigorosa. Atendimento direto a confinamentos, recria e gado leiteiro em Paraíso do Tocantins.
-        </p>
-        <div class="hero-actions">
-          <a href="#simulador" class="btn btn-gold">
-            <span>Calcular Carga da Fazenda</span>
-          </a>
-          <a href="#insumos" class="btn btn-outline">
-            <span>Ver Especificações Técnicas</span>
-          </a>
-        </div>
-
-        <div class="hero-metrics">
-          <div>
-            <div class="metric-value">68% FDN</div>
-            <div class="metric-label">Fibra digestível da casquinha peletizada</div>
-          </div>
-          <div>
-            <div class="metric-value">46% PB</div>
-            <div class="metric-label">Proteína bruta garantida no farelo de soja</div>
-          </div>
-          <div>
-            <div class="metric-value">0 km</div>
-            <div class="metric-label">Pronta entrega direta do depósito em Paraíso</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-image-frame">
-        <img src="assets/nutricao-animal.jpg" alt="Depósito e sacaria paletizada Safra Agro">
-        <div class="hero-image-caption">
-          <strong>Depósito no Parque dos Buritis</strong>
-          <span>Armazenamento ventilado, sacaria nova e pátio para manobra de carretas.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Insumos & Laudos Técnicos -->
-  <section id="insumos" class="section-spacing" style="background: var(--bg-secondary); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
-    <div class="container">
-      <div class="section-header">
+  <main id="topo">
+    <section class="hero">
+      <div class="wrap hero-grid">
         <div>
-          <h2 class="section-title">Insumos Selecionados & Parâmetros Nutricionais</h2>
-          <p class="section-desc">Fornecimento consistente para fechar a conta da arroba produzida com segurança sanitária e digestibilidade comprovada.</p>
+          <h1>Nutrição bovina &amp; <span>pulverização aérea.</span></h1>
+          <p class="hero-copy">
+            Casquinha de soja, sorgo, farelo de soja, milho, DDG, ureia e rações direto do depósito em Paraíso do Tocantins — somados à frota Safra Air de drones DJI Agras T100, T40 e T25 atendendo Tocantins, Maranhão e Pará.
+          </p>
+          <div class="hero-meta-line tabular">
+            Av. Marginal, Nº 326 · Parque dos Buritis · Paraíso do Tocantins - TO · (63) 99219-8016
+          </div>
+          <div class="hero-actions">
+            <a href="https://wa.me/5563992198016?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20uma%20cota%C3%A7%C3%A3o%20com%20a%20Safra%20Agro." target="_blank" rel="noopener" class="btn-whatsapp tabular">
+              Cotar no WhatsApp (63) 99219-8016
+            </a>
+            <a href="#safra-air" class="btn-secondary">Conhecer Safra Air Drones ↓</a>
+          </div>
         </div>
-        <a href="https://wa.me/5563992198016?text=Ol%C3%A1!%20Gostaria%20da%20tabela%20de%20pre%C3%A7os%20atualizada%20da%20Safra%20Agro." target="_blank" rel="noopener" class="btn btn-outline">
-          <span>Solicitar Tabela do Dia</span>
-        </a>
+
+        <div class="hero-plates">
+          <figure class="hero-plate">
+            <img src="assets/foto_deposito.jpg" alt="Depósito organizado de insumos e nutrição animal da Safra Agro em Paraíso" />
+            <figcaption class="hero-plate-cap">
+              <strong>Safra Agro</strong>
+              <span>Parque dos Buritis · N° 326</span>
+            </figcaption>
+          </figure>
+          <figure class="hero-plate">
+            <img src="assets/foto_drone_soja.jpg" alt="Drone pulverizador Safra Air sobrevoando lavoura de soja" />
+            <figcaption class="hero-plate-cap">
+              <strong>Safra Air Drones</strong>
+              <span>TO · MA · PA</span>
+            </figcaption>
+          </figure>
+        </div>
       </div>
+    </section>
 
-      <div class="products-mosaic">
-        <!-- Casquinha de Soja -->
-        <article class="product-card card-large">
-          <div class="product-img-wrapper" style="height: 320px;">
-            <img src="assets/casquinha-soja.jpg" alt="Casquinha de Soja Peletizada Safra Agro">
-            <span class="product-tag">ALTA DIGESTIBILIDADE RUMINAL</span>
-          </div>
-          <div class="product-body">
-            <div>
-              <h3 class="product-name">Casquinha de Soja Peletizada</h3>
-              <p class="product-description">
-                Subproduto nobre do processamento da soja, a casquinha é a fonte predileta de fibra de rápida fermentação no rúmen. Substitui com vantagem parte do volumoso ou grão moído, reduzindo o risco de acidose e diminuindo o custo global do confinamento.
-              </p>
-              <table class="spec-table">
-                <thead>
-                  <tr>
-                    <th>PARÂMETRO</th>
-                    <th>NÍVEL DE GARANTIA</th>
-                    <th>VANTAGEM ZOOTÉCNICA</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>FDN (Fibra em Detergente Neutro)</td>
-                    <td><strong>65% a 70%</strong></td>
-                    <td>Estabilidade da fermentação ruminal</td>
-                  </tr>
-                  <tr>
-                    <td>Proteína Bruta (PB)</td>
-                    <td><strong>12% a 14%</strong></td>
-                    <td>Aporte proteico moderado</td>
-                  </tr>
-                  <tr>
-                    <td>Nutrientes Digestíveis (NDT)</td>
-                    <td><strong>75% a 80%</strong></td>
-                    <td>Densidade energética equivalente à polpa</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <a href="https://wa.me/5563992198016?text=Ol%C3%A1!%20Gostaria%20de%20cota%C3%A7%C3%A3o%20para%20CASQUINHA%20DE%20SOJA%20PELETIZADA." target="_blank" rel="noopener" class="btn btn-green">
-              <span>Cotar Casquinha no WhatsApp</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Sorgo em Grão -->
-        <article class="product-card card-side">
-          <div class="product-img-wrapper" style="height: 320px;">
-            <img src="assets/sorgo.jpg" alt="Sorgo em Grão Selecionado">
-            <span class="product-tag">ENERGIA & CUSTO-BENEFÍCIO</span>
-          </div>
-          <div class="product-body">
-            <div>
-              <h3 class="product-name">Sorgo em Grão & Moído</h3>
-              <p class="product-description">
-                Grão limpo, seco e com granulometria calibrada. Entrega cerca de 88% a 92% do valor energético do milho com economia direta de 15% a 25% por tonelada na dieta de bovinos.
-              </p>
-              <table class="spec-table">
-                <thead>
-                  <tr>
-                    <th>PARÂMETRO</th>
-                    <th>VALOR</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Proteína Bruta (PB)</td>
-                    <td><strong>9,0% a 10,5%</strong></td>
-                  </tr>
-                  <tr>
-                    <td>Umidade Máxima</td>
-                    <td><strong>≤ 13,0%</strong></td>
-                  </tr>
-                  <tr>
-                    <td>Apresentação</td>
-                    <td><strong>Sacos 50kg / Granel</strong></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <a href="https://wa.me/5563992198016?text=Ol%C3%A1!%20Gostaria%20de%20cota%C3%A7%C3%A3o%20para%20SORGO%20EM%20GR%C3%83O." target="_blank" rel="noopener" class="btn btn-outline">
-              <span>Cotar Sorgo em Grão</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Farelo de Soja 46% -->
-        <article class="product-card card-half">
-          <div class="product-body">
-            <div>
-              <span class="brand-subtitle" style="margin-bottom: 8px;">CONCENTRADO PROTEICO</span>
-              <h3 class="product-name">Farelo de Soja Moído 46%</h3>
-              <p class="product-description">
-                O insumo proteico padrão de excelência na agropecuária. Fundamental para vacas em lactação, bezerros em fase de recria e formulações de alto ganho de peso diário.
-              </p>
-              <table class="spec-table">
-                <thead>
-                  <tr>
-                    <th>ITEM</th>
-                    <th>ESPECIFICAÇÃO</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Proteína Bruta Mínima</td>
-                    <td><strong>46,0%</strong></td>
-                  </tr>
-                  <tr>
-                    <td>Matéria Mineral</td>
-                    <td><strong>≤ 6,5%</strong></td>
-                  </tr>
-                  <tr>
-                    <td>Disponibilidade</td>
-                    <td><strong>Sacos 40/50kg ou Carga Fechada</strong></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <a href="https://wa.me/5563992198016?text=Ol%C3%A1!%20Gostaria%20de%20cota%C3%A7%C3%A3o%20para%20FARELO%20DE%20SOJA%2046%25." target="_blank" rel="noopener" class="btn btn-outline">
-              <span>Cotar Farelo de Soja</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Rações Balanceadas & Milho -->
-        <article class="product-card card-half">
-          <div class="product-body">
-            <div>
-              <span class="brand-subtitle" style="margin-bottom: 8px;">NUTRIÇÃO COMPLETA</span>
-              <h3 class="product-name">Rações de Confinamento & Milho Seco</h3>
-              <p class="product-description">
-                Formulações comerciais ajustadas para semiconfinamento, confinamento expresso e suplementação a pasto no período seco. Milho em grão beneficiado, livre de impurezas.
-              </p>
-              <table class="spec-table">
-                <thead>
-                  <tr>
-                    <th>LINHA</th>
-                    <th>INDICAÇÃO</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Terminação Rápida</td>
-                    <td><strong>Ganho acima de 1,4kg/cabeça/dia</strong></td>
-                  </tr>
-                  <tr>
-                    <td>Lactação Alta Produção</td>
-                    <td><strong>Manutenção de escore e pico de leite</strong></td>
-                  </tr>
-                  <tr>
-                    <td>Milho Padrão Comercial</td>
-                    <td><strong>Moído grosso, fino ou grão inteiro</strong></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <a href="https://wa.me/5563992198016?text=Ol%C3%A1!%20Gostaria%20de%20cota%C3%A7%C3%A3o%20para%20RA%C3%87%C3%95ES%20E%20MILHO." target="_blank" rel="noopener" class="btn btn-outline">
-              <span>Consultar Rações & Milho</span>
-            </a>
-          </div>
-        </article>
+    <div class="specs-strip">
+      <div class="wrap specs-grid">
+        <div class="spec-item">
+          <strong>Nutrição Bovina Completa</strong>
+          <span>Casquinha de soja · Sorgo · Farelo · Milho · DDG · Ureia · Rações</span>
+        </div>
+        <div class="spec-item">
+          <strong>Safra Air · Aviação Agrícola</strong>
+          <span>DJI Agras T100 · T40 · T25 · Contrato de área</span>
+        </div>
+        <div class="spec-item">
+          <strong>Condições Comerciais Reais</strong>
+          <span>Troca em contrato de soja · Pastagem em até 4x no cartão</span>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- Interactive Quotation Requisition (Simulator) -->
-  <section id="simulador" class="section-spacing">
-    <div class="container">
-      <div class="calculator-container">
-        <div style="margin-bottom: 36px;">
-          <h2 class="section-title">Requisição Direta de Cotação</h2>
-          <p class="section-desc">Defina o insumo, formato de transporte e destino para receber disponibilidade de lote e preço líquido posto fazenda ou no balcão.</p>
+    <section id="linhas" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Linhas de fornecimento &amp; campo</h2>
+          <p>Clique em qualquer item para ver detalhes da operação e chamar direto a equipe comercial da Safra no WhatsApp.</p>
         </div>
 
-        <div class="calculator-grid">
-          <div>
-            <div class="form-group">
-              <label for="calcInsumo">1. Insumo Desejado</label>
-              <select id="calcInsumo" class="form-control" onchange="renderSummary()">
-                <option value="Casquinha de Soja Peletizada">Casquinha de Soja Peletizada (FDN 68%)</option>
-                <option value="Sorgo em Grão Selecionado">Sorgo em Grão Selecionado</option>
-                <option value="Sorgo Moído para Ração">Sorgo Moído Fino / Grosso</option>
-                <option value="Farelo de Soja 46%">Farelo de Soja 46% Alta Proteína</option>
-                <option value="Milho Seco Padrão">Milho em Grão Limpo e Seco</option>
-                <option value="Ração Confinamento / Terminação">Ração Confinamento / Terminação</option>
-                <option value="Carga Mista Diversificada">Carga Mista / Diversos Insumos</option>
-              </select>
-            </div>
+        <div class="ledger-wrap">
+          <div class="ledger-table" id="supplyLedger">
+            <button type="button" class="ledger-row is-active"
+              data-title="Casquinha de Soja Peletizada"
+              data-desc="Fonte de fibra digestível para confinamento, semiconfinamento e gado leiteiro, garantindo saúde ruminal e ganho de peso consistente com retirada ou entrega programada."
+              data-img="assets/casquinha_clean.jpg"
+              data-wa="Olá! Gostaria de cotar Casquinha de Soja Peletizada com a Safra Agro.">
+              <span class="ledger-code tabular">ITEM 01</span>
+              <span class="ledger-name">Casquinha de Soja Peletizada</span>
+              <span class="ledger-spec">Fibra digestível · Sacaria ou carga</span>
+              <span class="ledger-cta">Cotar →</span>
+            </button>
 
-            <div class="form-group">
-              <label for="calcModalidade">2. Formato de Carga / Fornecimento</label>
-              <select id="calcModalidade" class="form-control" onchange="renderSummary()">
-                <option value="Sacos de 40kg ou 50kg">Sacaria Fechada (Sacos de 40kg / 50kg)</option>
-                <option value="Big Bags (1.000 kg)">Big Bag Paletizado (Aprox. 1.000 kg)</option>
-                <option value="Carga a Granel - Truck (14 Toneladas)">A Granel — Caminhão Truck (14 Toneladas)</option>
-                <option value="Carga a Granel - Bitrem (38 Toneladas)">A Granel — Bitrem (38 Toneladas)</option>
-                <option value="Carga a Granel - Rodotrem (50 Toneladas)">A Granel — Rodotrem / Graneleiro (50 Toneladas)</option>
-                <option value="Retirada Fracionada no Balcão">Retirada Fracionada no Balcão</option>
-              </select>
-            </div>
+            <button type="button" class="ledger-row"
+              data-title="Sorgo em Grão &amp; Moído"
+              data-desc="Alternativa energética de alto custo-benefício em substituição parcial ou total do milho, ideal para dieta de terminação e recria no cocho."
+              data-img="assets/sorgo_clean.jpg"
+              data-wa="Olá! Gostaria de cotar Sorgo em Grão / Moído com a Safra Agro.">
+              <span class="ledger-code tabular">ITEM 02</span>
+              <span class="ledger-name">Sorgo em Grão &amp; Moído</span>
+              <span class="ledger-spec">Energia para cocho · Custo menor</span>
+              <span class="ledger-cta">Cotar →</span>
+            </button>
 
-            <div class="form-group">
-              <label for="calcVolume">3. Quantidade Estimada</label>
-              <input type="text" id="calcVolume" class="form-control" value="60 sacos" placeholder="Ex: 80 sacos ou 35 toneladas" oninput="renderSummary()">
-            </div>
+            <button type="button" class="ledger-row"
+              data-title="Farelo de Soja, Milho, DDG &amp; Ureia"
+              data-desc="Núcleo proteico e energético completo para formulações de fazenda, leite e corte, com disponibilidade direta em Paraíso do Tocantins."
+              data-img="assets/foto_gado_cocho.jpg"
+              data-wa="Olá! Gostaria de cotar Farelo de Soja, Milho, DDG ou Ureia com a Safra Agro.">
+              <span class="ledger-code tabular">ITEM 03</span>
+              <span class="ledger-name">Farelo de Soja, Milho, DDG &amp; Ureia</span>
+              <span class="ledger-spec">Proteína 46% · Dietas corte e leite</span>
+              <span class="ledger-cta">Cotar →</span>
+            </button>
 
-            <div class="form-group">
-              <label for="calcDestino">4. Município / Nome da Fazenda</label>
-              <input type="text" id="calcDestino" class="form-control" value="Paraíso do Tocantins" placeholder="Ex: Fazenda Santa Maria - Dois Irmãos - TO" oninput="renderSummary()">
-            </div>
-          </div>
+            <button type="button" class="ledger-row"
+              data-title="Rações Prontas &amp; Retirada em Depósito"
+              data-desc="Rações comerciais de alta performance e estoque organizado em paletes na Av. Marginal, Nº 326 — Parque dos Buritis, agilizando o embarque na carreta ou caminhonete."
+              data-img="assets/foto_deposito.jpg"
+              data-wa="Olá! Quero consultar disponibilidade de rações e horário de embarque no depósito.">
+              <span class="ledger-code tabular">ITEM 04</span>
+              <span class="ledger-name">Rações &amp; Estoque em Paraíso</span>
+              <span class="ledger-spec">Retirada no balcão ou logística regional</span>
+              <span class="ledger-cta">Cotar →</span>
+            </button>
 
-          <div class="calculator-summary-card">
-            <div>
-              <h3 class="summary-heading">Resumo da Solicitação</h3>
-              <div class="summary-box">
-                <div class="summary-line">
-                  <span>Insumo:</span>
-                  <strong id="sumInsumo">Casquinha de Soja Peletizada</strong>
-                </div>
-                <div class="summary-line">
-                  <span>Embalagem:</span>
-                  <strong id="sumModalidade">Sacos de 40kg ou 50kg</strong>
-                </div>
-                <div class="summary-line">
-                  <span>Volume:</span>
-                  <strong id="sumVolume">60 sacos</strong>
-                </div>
-                <div class="summary-line">
-                  <span>Localidade:</span>
-                  <strong id="sumDestino">Paraíso do Tocantins</strong>
-                </div>
-                <div class="summary-line">
-                  <span>Ponto de Saída:</span>
-                  <strong style="color: var(--accent-gold);">Depósito Paraíso - TO</strong>
-                </div>
-              </div>
-              <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 24px;">
-                Ao clicar abaixo, sua requisição será estruturada e enviada diretamente para a mesa de atendimento comercial da Safra Agro no WhatsApp.
-              </p>
-            </div>
+            <button type="button" class="ledger-row"
+              data-title="Safra Air · Drones DJI Agras T100, T40 &amp; T25"
+              data-desc="Aplicação de defensivos, fertilizantes, semeadura aérea, mapeamento e topografia sem amassamento de lavoura, com atendimento em TO, MA e PA."
+              data-img="assets/foto_drone_soja.jpg"
+              data-wa="Olá! Quero cotar aplicação aérea com drone na Safra Air.">
+              <span class="ledger-code tabular">ITEM 05</span>
+              <span class="ledger-name">Safra Air · Pulverização com Drones</span>
+              <span class="ledger-spec">Frota DJI Agras · TO | MA | PA</span>
+              <span class="ledger-cta">Cotar →</span>
+            </button>
 
-            <button onclick="dispatchQuote()" class="btn btn-gold" style="width: 100%; font-size: 15px;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
-              <span>Transmitir Cotação ao WhatsApp</span>
+            <button type="button" class="ledger-row"
+              data-title="Troca em Contrato de Soja &amp; Pastagem 4x"
+              data-desc="Condições comerciais flexíveis da Safra Air para fechar sua área agora: pagamento via troca em contrato de soja ou pastagem em até 4x no cartão de crédito."
+              data-img="assets/arte_feed_safra_air.jpg"
+              data-wa="Olá! Quero saber sobre contrato de área na Safra Air (troca em soja ou pastagem 4x).">
+              <span class="ledger-code tabular">ITEM 06</span>
+              <span class="ledger-name">Contratos · Troca em Soja &amp; Pastagem 4x</span>
+              <span class="ledger-spec">Agenda aberta para aplicação</span>
+              <span class="ledger-cta">Cotar →</span>
             </button>
           </div>
+
+          <aside class="preview-panel">
+            <img id="srvImg" src="assets/casquinha_clean.jpg" alt="Casquinha de Soja Peletizada Safra Agro" />
+            <div class="preview-body">
+              <h3 id="srvTitle">Casquinha de Soja Peletizada</h3>
+              <p id="srvDesc">Fonte de fibra digestível para confinamento, semiconfinamento e gado leiteiro, garantindo saúde ruminal e ganho de peso consistente com retirada ou entrega programada.</p>
+              <a id="srvWa" href="https://wa.me/5563992198016?text=Ol%C3%A1!%20Gostaria%20de%20cotar%20Casquinha%20de%20Soja%20Peletizada%20com%20a%20Safra%20Agro." target="_blank" rel="noopener" class="btn-whatsapp" style="width:100%;">
+                Solicitar cotação deste item →
+              </a>
+            </div>
+          </aside>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Logistics & Physical Presence -->
-  <section id="estrutura" class="section-spacing" style="background: var(--bg-secondary); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
-    <div class="container">
-      <div class="logistics-card">
+    <section id="safra-air" class="air-section">
+      <div class="wrap air-layout">
         <div>
-          <h2 class="section-title">Infraestrutura Operacional & Embarque</h2>
-          <p class="section-desc">Localização estratégica com acesso direto às principais rodovias que interligam as bacias produtoras do Tocantins.</p>
-
-          <ul class="logistics-list">
-            <li class="logistics-item">
-              <span class="logistics-icon">📍</span>
-              <div>
-                <strong>Escritório & Balcão Comercial</strong>
-                <span>Av. Marginal, 236 • Quadra 02, Lote 19 — Parque dos Buritis, Paraíso do Tocantins - TO</span>
-              </div>
-            </li>
-            <li class="logistics-item">
-              <span class="logistics-icon">🚛</span>
-              <div>
-                <strong>Depósito de Armazenagem & Cargas</strong>
-                <span>Av. José de Alencar, 243 — Pátio amplo, balança conferida e carregamento mecânico.</span>
-              </div>
-            </li>
-            <li class="logistics-item">
-              <span class="logistics-icon">⏱️</span>
-              <div>
-                <strong>Janela de Atendimento</strong>
-                <span>Segunda a Sexta: 07h30 às 18h00 | Sábado: 07h30 às 12h00</span>
-              </div>
-            </li>
-          </ul>
-
-          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-            <a href="https://maps.google.com/?q=Av.+Marginal+236+Parque+dos+Buritis+Paraiso+do+Tocantins" target="_blank" rel="noopener" class="btn btn-outline">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-              <span>Abrir Localização no Mapa</span>
-            </a>
-            <a href="https://wa.me/5563992198016?text=Ol%C3%A1!%20Pode%20me%20mandar%20a%20localiza%C3%A7%C3%A3o%20em%20tempo%20real%20da%20loja%3F" target="_blank" rel="noopener" class="btn btn-green">
-              <span>Localização via WhatsApp</span>
-            </a>
+          <div class="air-logo-row">
+            <img src="assets/logo_safra_air.png" alt="Safra Air — Tecnologia que gera resultados" />
+            <span>Divisão de Aviação Agrícola</span>
           </div>
-        </div>
-
-        <div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--border-medium); height: 380px;">
-          <img src="assets/casquinha_clean.jpg" alt="Insumos agropecuários no depósito" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Instagram Feed Channel -->
-  <section class="section-spacing" style="text-align: center;">
-    <div class="container">
-      <h2 class="section-title" style="margin-bottom: 12px;">Comunidade Agropecuária no Instagram</h2>
-      <p class="section-desc" style="margin: 0 auto 32px; max-width: 600px;">
-        Acompanhe boletins de chegada de cargas, cotações semanais e relatos de campo pelo perfil oficial <strong>@safraagro_paraiso</strong> (+ de 1.000 seguidores produtores).
-      </p>
-      <a href="https://www.instagram.com/safraagro_paraiso/" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 14px 32px;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-        <span>Acessar @safraagro_paraiso</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- DLuz Digital Ecosystem -->
-  <section id="solucoes-digitais" class="ecosystem-panel">
-    <div class="container">
-      <div style="text-align: center; max-width: 720px; margin: 0 auto;">
-        <span class="brand-subtitle" style="margin-bottom: 8px;">ENGENHARIA COMERCIAL & AUTOMAÇÃO</span>
-        <h2 class="section-title">Soluções Digitais DLuz para o Agronegócio</h2>
-        <p class="section-desc" style="margin: 12px auto 0;">
-          Estrutura técnica e canais de prospecção digital projetados sob medida para revendas agrícolas, cerealistas e produtores do Tocantins.
-        </p>
-      </div>
-
-      <div class="ecosystem-grid">
-        <div class="ecosystem-card">
-          <h3>Plataformas de Cotação Rápida</h3>
-          <p>Páginas sem templates genéricos de IA, focadas em velocidade absoluta no celular e conversão direta no WhatsApp da revenda.</p>
-        </div>
-        <div class="ecosystem-card">
-          <h3>Tráfego Georreferenciado Agro</h3>
-          <p>Captação segmentada de produtores rurais e compradores de insumos em um raio estratégico de até 300km no Tocantins e Pará.</p>
-        </div>
-        <div class="ecosystem-card">
-          <h3>Automação de Leads & CRM</h3>
-          <p>Organização inteligente de fazendas, histórico de compras por safra e disparos automatizados de chegada de cargas de grãos.</p>
-        </div>
-        <div class="ecosystem-card">
-          <h3>Infraestrutura Dedicada & SSL</h3>
-          <p>Servidores próprios de alto desempenho com disponibilidade contínua e certificação de segurança para portais corporativos.</p>
-        </div>
-      </div>
-
-      <div style="text-align: center; margin-top: 40px;">
-        <a href="https://wa.me/556399432564?text=Ol%C3%A1%20Duilio!%20Gostaria%20de%20conhecer%20as%20solu%C3%A7%C3%B5es%20digitais%20da%20DLuz%20Digital." target="_blank" rel="noopener" class="btn btn-gold">
-          <span>Falar com o Especialista DLuz Digital</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-            <img src="assets/logo.jpg" alt="Safra Agro" style="width: 32px; height: 32px; border-radius: 6px; background: #fff; padding: 2px;">
-            <strong style="font-family: var(--font-serif); font-size: 18px; color: #fff;">Safra Agronegócios</strong>
-          </div>
-          <p style="max-width: 380px; font-size: 13px; line-height: 1.6; color: var(--text-secondary);">
-            Comércio de insumos para nutrição animal, concentrados e grãos a granel e sacaria em Paraíso do Tocantins - TO.
+          <h2>Safra Air · Frota DJI Agras T100, T40 e T25</h2>
+          <p class="air-lead">
+            Drones preparados para qualquer escala de propriedade — da abertura de grandes talhões no cerrado ao trabalho ágil perto de obstáculos, sem rastro de trator e sem depender de solo seco.
           </p>
+
+          <table class="fleet-table">
+            <tbody>
+              <tr>
+                <td>DJI AGRAS T100</td>
+                <td>Alta capacidade operacional para grandes áreas, mais hectares por hora e menos paradas de reabastecimento.</td>
+              </tr>
+              <tr>
+                <td>DJI AGRAS T40</td>
+                <td>Versatilidade, força e uniformidade para propriedades médias e grandes com precisão de gota.</td>
+              </tr>
+              <tr>
+                <td>DJI AGRAS T25</td>
+                <td>Compacto e ágil perto de obstáculos, cercas e áreas menores com transporte rápido entre fazendas.</td>
+              </tr>
+              <tr>
+                <td>Escopo Completo</td>
+                <td>Aplicação de defensivos, fertilizantes, semeadura aérea, mapeamento e topografia em <strong>TO · MA · PA</strong>.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="air-terms">
+            <strong>Condições facilitadas Safra Air:</strong> trocamos aplicação em <strong>contrato de soja</strong> e fazemos aplicação de <strong>pastagem em até 4x no cartão de crédito</strong>.
+          </div>
+
+          <a href="https://wa.me/5563992198016?text=Ol%C3%A1!%20Quero%20agendar%20aplica%C3%A7%C3%A3o%20com%20drones%20na%20Safra%20Air." target="_blank" rel="noopener" class="btn-whatsapp">
+            Agendar área com a Safra Air
+          </a>
         </div>
 
-        <div>
-          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-gold); margin-bottom: 8px;">ATENDIMENTO COMERCIAL</div>
-          <p style="color: #fff; font-weight: 600;">(63) 99219-8016</p>
-          <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Atendimento em todo o estado do Tocantins</p>
+        <div class="air-photo">
+          <img src="assets/foto_drone_soja.jpg" alt="Drone agrícola pulverizador Safra Air operando sobre plantação de soja" />
         </div>
       </div>
+    </section>
 
-      <div class="footer-bottom">
-        <div>
-          Av. Marginal, 236 • Qd. 02, Lt. 19 • Parque dos Buritis • Paraíso do Tocantins - TO
+    <section id="estrutura" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Operação &amp; entregas no campo</h2>
+          <p>Da retirada rápida de sacaria em Paraíso ao atendimento técnico direto para fazendas e lavouras da região.</p>
         </div>
-        <div>
-          Direção de arte & engenharia digital por <strong style="color: #fff;">DLuz Digital</strong>
+
+        <div class="plates-grid">
+          <article class="plate-card">
+            <img src="assets/casquinha_clean.jpg" alt="Casquinha de soja peletizada" />
+            <div class="plate-meta">
+              <h3>Casquinha de Soja Peletizada</h3>
+              <p>Fibra nobre de alta digestibilidade para balanceamento de dietas em confinamento e leite.</p>
+              <span class="plate-cat">Nutrição Animal</span>
+            </div>
+          </article>
+
+          <article class="plate-card">
+            <img src="assets/sorgo_clean.jpg" alt="Sorgo em grãos selecionado" />
+            <div class="plate-meta">
+              <h3>Sorgo em Grão &amp; Moído</h3>
+              <p>Rendimento energético direto para reduzir o custo por arroba na fase de terminação.</p>
+              <span class="plate-cat">Grãos &amp; Energia</span>
+            </div>
+          </article>
+
+          <article class="plate-card">
+            <img src="assets/foto_gado_cocho.jpg" alt="Gado Nelore no cocho com ração e milho" />
+            <div class="plate-meta">
+              <h3>Dietas de Corte &amp; Leite</h3>
+              <p>Combinações com farelo de soja, milho, DDG, ureia e rações prontas para o cocho.</p>
+              <span class="plate-cat">Pecuária Regional</span>
+            </div>
+          </article>
+
+          <article class="plate-card">
+            <img src="assets/foto_deposito.jpg" alt="Depósito Safra Agro no Parque dos Buritis" />
+            <div class="plate-meta">
+              <h3>Depósito Parque dos Buritis</h3>
+              <p>Armazenamento sobre paletes e acesso direto pela Avenida Marginal, Nº 326.</p>
+              <span class="plate-cat">Paraíso - TO</span>
+            </div>
+          </article>
+
+          <article class="plate-card">
+            <img src="assets/foto_drone_soja.jpg" alt="Pulverização com drone DJI Agras Safra Air" />
+            <div class="plate-meta">
+              <h3>Pulverização &amp; Semeadura Aérea</h3>
+              <p>Aplicação uniforme sem amassar a soja, com drones T100, T40 e T25 em operação.</p>
+              <span class="plate-cat">Safra Air · TO | MA | PA</span>
+            </div>
+          </article>
+
+          <article class="plate-card">
+            <img src="assets/foto_colheita_soja.jpg" alt="Colheita de soja mecanizada para contratos Safra Air" />
+            <div class="plate-meta">
+              <h3>Contratos de Área &amp; Pastagem</h3>
+              <p>Atendimento programado com troca em contrato de soja ou parcelamento em até 4x.</p>
+              <span class="plate-cat">Agenda Aberta</span>
+            </div>
+          </article>
         </div>
       </div>
+    </section>
+
+    <section id="contato" class="section" style="border-bottom:none;">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Atendimento direto em Paraíso</h2>
+          <p>Fale direto com o comercial da Safra Agro &amp; Safra Air para cotar carga, retirar no depósito ou reservar agenda de drone.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="quote-box">
+            <blockquote>“Ótimo atendimento, ótimos produtos com melhor preço da região!”</blockquote>
+            <cite class="tabular">Avaliação real 5,0 ★ no Google Maps (6 avaliações de clientes)</cite>
+          </div>
+
+          <div class="contact-ledger">
+            <div class="contact-row">
+              <span>Endereço Oficial</span>
+              <strong>Av. Marginal, Nº 326 · Parque dos Buritis · Paraíso - TO</strong>
+            </div>
+            <div class="contact-row">
+              <span>WhatsApp Principal</span>
+              <a href="https://wa.me/5563992198016" target="_blank" rel="noopener" class="tabular" style="color:var(--whatsapp);">(63) 99219-8016</a>
+            </div>
+            <div class="contact-row">
+              <span>Comercial / Safra Air</span>
+              <a href="https://wa.me/5563992122906" target="_blank" rel="noopener" class="tabular">(63) 99212-2906</a>
+            </div>
+            <div class="contact-row">
+              <span>Instagram Oficial</span>
+              <a href="https://www.instagram.com/safraagro_paraiso/" target="_blank" rel="noopener" style="color:var(--safra-green);">@safraagro_paraiso</a>
+            </div>
+            <div class="contact-row" style="border-bottom:none;">
+              <span>Cobertura Safra Air</span>
+              <strong>Tocantins · Maranhão · Pará</strong>
+            </div>
+            <a href="https://wa.me/5563992198016?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Safra%20Agro%20e%20gostaria%20de%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn-whatsapp" style="width:100%; margin-top:10px;">
+              Solicitar cotação pelo WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap foot-inner">
+      <span>Safra Agro &amp; Safra Air · Av. Marginal, Nº 326 · Paraíso do Tocantins - TO</span>
+      <span>Modelo demonstrativo desenvolvido por <a href="proposta.html" style="color:var(--safra-green); font-weight:700;">DLuz Digital</a> · <a href="proposta.html" style="text-decoration:underline;">Ver Diagnóstico &amp; Proposta</a></span>
     </div>
   </footer>
 
-  <!-- Interactive Logic -->
+  <a href="https://wa.me/5563992198016" target="_blank" rel="noopener" class="sticky-wa tabular">
+    Cotar no WhatsApp · (63) 99219-8016
+  </a>
+
   <script>
-    function renderSummary() {
-      const insumo = document.getElementById('calcInsumo').value;
-      const modalidade = document.getElementById('calcModalidade').value;
-      const volume = document.getElementById('calcVolume').value || 'Não informado';
-      const destino = document.getElementById('calcDestino').value || 'A definir';
+    const rows = document.querySelectorAll('#supplyLedger .ledger-row');
+    const srvImg = document.getElementById('srvImg');
+    const srvTitle = document.getElementById('srvTitle');
+    const srvDesc = document.getElementById('srvDesc');
+    const srvWa = document.getElementById('srvWa');
 
-      document.getElementById('sumInsumo').innerText = insumo;
-      document.getElementById('sumModalidade').innerText = modalidade;
-      document.getElementById('sumVolume').innerText = volume;
-      document.getElementById('sumDestino').innerText = destino;
-    }
-
-    function dispatchQuote() {
-      const insumo = document.getElementById('calcInsumo').value;
-      const modalidade = document.getElementById('calcModalidade').value;
-      const volume = document.getElementById('calcVolume').value || 'A combinar';
-      const destino = document.getElementById('calcDestino').value || 'Paraíso do Tocantins';
-
-      const texto = `Olá, equipe da Safra Agro! Vim pelo site oficial e gostaria de cotar insumos:
-🌾 *Produto:* ${insumo}
-📦 *Formato:* ${modalidade}
-⚖️ *Volume Desejado:* ${volume}
-📍 *Destino / Fazenda:* ${destino}
-
-Poderiam me informar a disponibilidade de lote e as condições para retirada ou entrega? Obrigado!`;
-
-      const url = `https://wa.me/5563992198016?text=${encodeURIComponent(texto)}`;
-      window.open(url, '_blank');
-    }
-
-    // Inicialização
-    renderSummary();
+    rows.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        rows.forEach((r) => r.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        srvTitle.textContent = btn.dataset.title;
+        srvDesc.textContent = btn.dataset.desc;
+        srvImg.src = btn.dataset.img;
+        srvImg.alt = btn.dataset.title;
+        srvWa.href = 'https://wa.me/5563992198016?text=' + encodeURIComponent(btn.dataset.wa);
+      });
+    });
   </script>
 </body>
 </html>
