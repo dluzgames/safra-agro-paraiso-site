@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safra Agro &amp; Safra Air — Links Oficiais | Paraíso do Tocantins</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f1712;
+      --surface: #17231b;
+      --surface-hover: #1e2e23;
+      --ink: #f5f6f2;
+      --muted: #b7c4b9;
+      --gold: #e8b931;
+      --lime: #84cc16;
+      --green: #0d6832;
+      --line: rgba(245, 246, 242, 0.14);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Work Sans', sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 28px 16px 40px;
+      background-image:
+        linear-gradient(180deg, rgba(15, 23, 18, 0.84), rgba(15, 23, 18, 0.96)),
+        url('assets/foto_drone_soja.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .bio-shell {
+      width: 100%;
+      max-width: 440px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .bio-head {
+      text-align: center;
+      padding: 24px 18px 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .bio-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+    .bio-logos img {
+      height: 54px;
+      width: auto;
+      filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.65));
+    }
+    .bio-head h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      line-height: 1;
+    }
+    .bio-head p {
+      margin-top: 8px;
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .bio-loc {
+      margin-top: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .links-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .bio-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 16px 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--gold);
+      color: var(--ink);
+      text-decoration: none;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    }
+    .bio-btn:hover {
+      background: var(--surface-hover);
+      transform: translateY(-2px);
+    }
+    .bio-btn.air { border-left-color: var(--lime); }
+    .bio-btn.site { border-left-color: #ffffff; }
+    .bio-btn.primary {
+      background: linear-gradient(135deg, #0d6832, #094d24);
+      border-color: rgba(132, 204, 22, 0.45);
+      border-left: 4px solid var(--gold);
+    }
+    .bio-btn-kicker {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 3px;
+    }
+    .bio-btn.air .bio-btn-kicker { color: var(--lime); }
+    .bio-btn.site .bio-btn-kicker { color: var(--muted); }
+    .bio-btn strong {
+      display: block;
+      font-size: 15.5px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .bio-btn small {
+      display: block;
+      margin-top: 3px;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+    .bio-arrow {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .bio-btn.air .bio-arrow { color: var(--lime); }
+    .bio-foot {
+      margin-top: 10px;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <main class="bio-shell">
+    <header class="bio-head">
+      <div class="bio-logos">
+        <img src="assets/logo_safra_agro.png" alt="Safra Agro" />
+        <img src="assets/logo_safra_air.png" alt="Safra Air" />
+      </div>
+      <h1>Safra Agro &amp; Safra Air</h1>
+      <p>Nutrição animal direto na fazenda e pulverização agrícola de precisão com drones DJI Agras.</p>
+      <div class="bio-loc">Av. Marginal, Nº 326 · Paraíso do Tocantins - TO</div>
+    </header>
+
+    <section class="links-stack">
+      <a class="bio-btn primary" href="https://wa.me/5563992198016?text=Ol%C3%A1!%20Vim%20pelo%20Link%20da%20Bio%20e%20quero%20cotar%20insumos%20de%20nutri%C3%A7%C3%A3o%20animal%20na%20Safra%20Agro." target="_blank" rel="noopener">
+        <div>
+          <span class="bio-btn-kicker">Safra Agro · Nutrição Animal</span>
+          <strong>Cotar Casquinha, Sorgo e Farelo no WhatsApp</strong>
+          <small>Estoque próprio em Paraíso · Entrega direta na fazenda</small>
+        </div>
+        <span class="bio-arrow">→</span>
+      </a>
+
+      <a class="bio-btn air" href="https://wa.me/5563992198016?text=Ol%C3%A1!%20Vim%20pelo%20Link%20da%20Bio%20e%20quero%20or%C3%A7ar%20pulveriza%C3%A7%C3%A3o%20com%20drones%20Safra%20Air." target="_blank" rel="noopener">
+        <div>
+          <span class="bio-btn-kicker">Safra Air · Drones DJI Agras</span>
+          <strong>Agendar Pulverização Aérea (T100 · T40 · T25)</strong>
+          <small>TO · MA · PA · Troca em soja e pastagem em até 4x</small>
+        </div>
+        <span class="bio-arrow">→</span>
+      </a>
+
+      <a class="bio-btn site" href="index.html">
+        <div>
+          <span class="bio-btn-kicker">Site Oficial</span>
+          <strong>Conhecer Estrutura, Produtos e Frota</strong>
+          <small>Vitrine completa da Safra Agro e Safra Air</small>
+        </div>
+        <span class="bio-arrow">→</span>
+      </a>
+
+      <a class="bio-btn site" href="https://maps.google.com/?q=Av.+Marginal,+326,+Paraiso+do+Tocantins+-+TO" target="_blank" rel="noopener">
+        <div>
+          <span class="bio-btn-kicker">Google Maps · Nota 5,0 ★</span>
+          <strong>Como Chegar no Depósito (Av. Marginal, 326)</strong>
+          <small>Parque dos Buritis · Paraíso do Tocantins - TO</small>
+        </div>
+        <span class="bio-arrow">→</span>
+      </a>
+
+      <a class="bio-btn site" href="https://www.instagram.com/safraagro_paraiso/" target="_blank" rel="noopener">
+        <div>
+          <span class="bio-btn-kicker">Instagram Oficial</span>
+          <strong>Acompanhar @safraagro_paraiso</strong>
+          <small>Rotina do depósito, cargas e operações em campo</small>
+        </div>
+        <span class="bio-arrow">→</span>
+      </a>
+    </section>
+
+    <footer class="bio-foot">
+      SAFRA AGRO &amp; SAFRA AIR · (63) 99219-8016
+    </footer>
+  </main>
+</body>
+</html>
